@@ -38,9 +38,9 @@ export default function CountriesList() {
                 onChange={e => setSearch(e.target.value)}
                 className={style.search}
             />
-            <div className={`${style.grid} countryCard`}>
+            <div className={style.grid}>
                 {filtered.map((c, i) => (
-                    <div className={style.card} key={i}>
+                    <div className={`${style.card} countryCard`} key={i}>
                         <img src={c.png} alt={c.common} />
                         <p>{c.common}</p>
                     </div>
