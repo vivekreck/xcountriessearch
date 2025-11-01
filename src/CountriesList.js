@@ -24,7 +24,6 @@ export default function CountriesList() {
         getData();
     }, []);
 
-    console.log(countries)
     const filtered = countries.filter(c =>
         c.common.toLowerCase().includes(search.toLowerCase())
     );
@@ -39,7 +38,7 @@ export default function CountriesList() {
                 onChange={e => setSearch(e.target.value)}
                 className={style.search}
             />
-            <div className={style.grid}>
+            <div className={`${style.grid} countryCard`}>
                 {filtered.map((c, i) => (
                     <div className={style.card} key={i}>
                         <img src={c.png} alt={c.common} />
